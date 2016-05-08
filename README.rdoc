@@ -78,3 +78,22 @@ root 'pages#home'
 get 'about', to: 'pages#about'
 
 Step 19: Change home.html.erb, about.html.erb to use updated paths
+
+Step 20: Production Deploy
+        -> Create a heroku account
+        -> Modify Gemfile
+            Move gem 'sqlite3' to :development, :test group
+            Create production specific gem settings
+            group :production do
+            
+                # Use postgreSQL as the database for Active Record
+                gem 'pg'
+                
+                # Access an IRB console on exception pages or by using <%= console %> in views
+                gem 'rails_12factor'
+            
+            end
+        -> Install heroku toolbelt for C9
+            https://docs.c9.io/docs/deploying-via-cli
+            Verify installation by running `heroku --version`
+        -> Login into heroku by running `heroku login` 

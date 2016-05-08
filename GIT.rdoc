@@ -1,3 +1,4 @@
+
 -> Setting up git environment
 	-> Install git
 	-> Check whether git is installed properly by running `git --version` in CMD 
@@ -20,5 +21,15 @@
 		-> cd to the directory with the local repository
 		-> git remote add origin remoteRepositoryURL
 		-> git push -u origin master
-	-> Restore master
+	-> To reject latest changes
 		-> git checkout -f
+	-> To view remote setup in environment
+		-> git remote -v
+	-> Future pushes to repository
+		-> git push
+	-> Add SSH Key to Github Account [Using SSH key to push]
+		-> Find SSH key of C9 IDE
+			-> cat ~/.ssh/id_rsa.pub
+		-> Copy key to Github Account
+	-> Changing remote repository URL
+	    https://help.github.com/articles/changing-a-remote-s-url/
