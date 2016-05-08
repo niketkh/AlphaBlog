@@ -1,0 +1,24 @@
+-> Setting up git environment
+	-> Install git
+	-> Check whether git is installed properly by running `git --version` in CMD 
+	-> Set git config
+		-> git config --global user.name "Niket Khandelwal"
+		-> git config --global user.email "niketkh@gmail.com"
+	-> To see config
+		-> git config --list
+	-> Initialize git repository
+		-> Inside application folder run `git init` in CMD
+	-> Add all files to repository
+		-> git add -A
+	-> To check status of git repository
+		-> git status
+	-> Commit all changes
+		git commit -m "Create Rails Application with home and about pages"
+	-> Add repository to github
+		-> https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+		-> create repository on github.com
+		-> cd to the directory with the local repository
+		-> git remote add origin remoteRepositoryURL
+		-> git push -u origin master
+	-> Restore master
+		-> git checkout -f
