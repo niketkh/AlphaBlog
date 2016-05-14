@@ -1,17 +1,11 @@
 
 Step 1: Ensure you are in the code/rails_projects directory and not in an existing rails application directory like code/rails_projects/test_app
 
-Step 2: Create a new rails application using the command ->
+Step 2: Create a new rails application using the command `rails new alpha-blog`
 
-rails new alpha-blog
+Step 3: Change directory into the new application using `cd alpha-blog`
 
-Step 3: Change directory into the new application using ->
-
-cd alpha-blog
-
-Step 4: Run the rails server using the command ->
-
-rails s -b 0.0.0.0
+Step 4: Run the rails server using the command `rails s -b 0.0.0.0`
 
 Step 5: Preview the application and ensure the Rails welcome page shows up by clicking on preview and then Port 3000 (Default) on the top menu of your nitrous IDE
 
@@ -82,18 +76,30 @@ Step 19: Change home.html.erb, about.html.erb to use updated paths
 Step 20: Production Deploy
         -> Create a heroku account
         -> Modify Gemfile
-            Move gem 'sqlite3' to :development, :test group
-            Create production specific gem settings
-            group :production do
-            
-                # Use postgreSQL as the database for Active Record
-                gem 'pg'
+            -> Move gem 'sqlite3' to :development, :test group
+            -> Create production specific gem settings
+                group :production do
                 
-                # Access an IRB console on exception pages or by using <%= console %> in views
-                gem 'rails_12factor'
-            
-            end
+                    # Use postgreSQL as the database for Active Record
+                    gem 'pg'
+                    
+                    # Access an IRB console on exception pages or by using <%= console %> in views
+                    gem 'rails_12factor'
+                
+                end
+            -> Run `bundle install --without production` to update Gemfile.lock file
         -> Install heroku toolbelt for C9
             https://docs.c9.io/docs/deploying-via-cli
             Verify installation by running `heroku --version`
         -> Login into heroku by running `heroku login` 
+        -> Create application in heroku by running `heroku create`
+        -> Add keys to heroku to avoid entering login details by running `heroku keys:add`
+        -> Push application to heroku by running `git push heroku master`
+        -> Change application name to something sensible by running `heroku rename alpha-blog`
+        -> To see heroku apps `heroku apps`
+        -> To see heroku domains `heroku domains`
+
+Step 21: Scaffold generators
+    rails generate scaffold Article title:string description:text
+    rake routes
+    rake db:migrate
