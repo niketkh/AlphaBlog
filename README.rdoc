@@ -103,3 +103,7 @@ Step 21: Scaffold generators
     rails generate scaffold Article title:string description:text
     rake routes
     rake db:migrate
+    
+Step 22: CRUD operations on Article
+
+Step 23: Make mockups using balsamiq
